@@ -1,6 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
+document.addEventListener('DOMContentLoaded', sliderInit(2));
+
+function sliderInit(activeSlide = 0) {
     let slides = document.querySelectorAll('.slide');
+
+    slides[activeSlide].classList.add('active');
 
     slides.forEach((slide) => {
         slide.addEventListener('click', () => {
@@ -14,4 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.classList.remove('active');
         });  
     }
-})
+}
